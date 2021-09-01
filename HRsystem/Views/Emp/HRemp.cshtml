@@ -1,0 +1,81 @@
+﻿@model HRsystem.Models.VMEmp
+@{
+    ViewBag.Title = "HRemp";
+    Layout = "~/Views/Shared/myshared.cshtml";
+}
+
+
+
+@section Body{
+    <form method="post" action="Save">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-1">
+                    <div>
+                        @Html.LabelFor(a => a.emp.fname)
+                        @Html.TextBoxFor(a => a.emp.fname)
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.number)
+                        @Html.TextBoxFor(a => a.emp.number)
+                    </div>
+                    <div>
+                        @Html.LabelFor(e => e.emp.country_id)
+                        @Html.DropDownListFor(e => e.emp.country_id, new SelectList(Model.listCountry, "ID", "name"))
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.address)
+                        @Html.TextBoxFor(a => a.emp.address)
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.salary)
+                        @Html.TextBoxFor(a => a.emp.salary)
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.Department_id)
+                        @Html.DropDownListFor(e => e.emp.Department_id, new SelectList(Model.listdept, "ID", "name"))
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.image)
+                        @*@Html.TextBoxFor(a => a.image)*@
+                        <input type="file" name="ImageFile" />
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div>
+                        @Html.LabelFor(a => a.emp.lname)
+                        @Html.TextBoxFor(a => a.emp.lname)
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.gender)
+                        @Html.TextBoxFor(a => a.emp.gnd)
+                        @*@Html.DropDownListFor(a =>a.emp.gnd)*@
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.city_id)
+                        @Html.DropDownListFor(e => e.emp.city_id, new SelectList(Model.listCity, "ID", "name"))
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.email)
+                        @Html.TextBoxFor(a => a.emp.email)
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.expsalary)
+                        @Html.TextBoxFor(a => a.emp.expsalary)
+                    </div>
+                    <div>
+                        @Html.LabelFor(a => a.emp.hiredate)
+                        @Html.TextBoxFor(a => a.emp.hiredate , new {@Name ="Date" })
+                    </div>
+                    <div>
+                        <input type="submit" value="save" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+}
+
+
+
+

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "EmpSearch";
+    Layout = "~/Views/Shared/myshared.cshtml";
+}
+
+@model HRsystem.Models.VMEmp
+
+@section Body{
+    
+    <form method="post" action="Search">
+        <div class="container">
+            <div class="row">
+                @{var grid = new WebGrid(Model.listEmployee, canPage: true, rowsPerPage: 3);
+
+                    @grid.GetHtml("emp.fname", "First name")
+                    @grid.GetHtml("emp.lname", "First name")
+                    @grid.GetHtml("emp.number", "First name")
+                    @grid.GetHtml("emp.salary", "First name")
+
+                }
+
+        </div>
+  </form>
+
+}
